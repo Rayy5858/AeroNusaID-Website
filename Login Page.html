@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroNusa ID - Portal Kualitas Udara & Cuaca Kalimantan</title>
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- File CSS Terpisah -->
+  <link rel="stylesheet" href="StyleLogin.css">
+</head>
+<body>
+
+  <!-- LAYER LATAR BELAKANG HUTAN VEKTOR ANAK-ANAK & SATWA ENDEMIK CUTE -->
+  <div class="ambient-layer">
+    <canvas id="natureCanvas"></canvas>
+
+    <div class="mountain-horizon">
+      <svg viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#064e3b" opacity="0.25" d="M0,224L60,213.3C120,203,240,181,360,186.7C480,192,600,224,720,213.3C840,203,960,149,1080,138.7C1200,128,1320,160,1380,176L1440,192L1440,320L0,320Z"></path>
+        <path fill="#047857" opacity="0.35" d="M0,256L80,229.3C160,203,320,149,480,165.3C640,181,800,267,960,266.7C1120,267,1280,181,1360,138.7L1440,96L1440,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <div class="cloud-loop cloud-1"></div>
+    <div class="cloud-loop cloud-2"></div>
+    <div class="cloud-loop cloud-3"></div>
+
+    <!-- HUTAN SISI KIRI & HEWAN CUTE -->
+    <div class="forest-margin forest-left">
+      <div class="animal-enggang" title="Burung Enggang Cute">
+        <svg viewBox="0 0 90 70" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="40" cy="42" rx="22" ry="18" fill="#1e293b"/>
+          <path d="M 22,42 C 10,48 5,55 8,62 C 18,58 28,52 35,46 Z" fill="#f59e0b"/>
+          <circle cx="58" cy="30" r="16" fill="#1e293b"/>
+          <circle cx="62" cy="26" r="6" fill="#ffffff"/>
+          <circle cx="63" cy="26" r="3.2" fill="#0f172a"/>
+          <circle cx="64" cy="24" r="1.2" fill="#ffffff"/>
+          <path d="M 68,28 C 84,26 88,34 82,42 C 75,44 70,36 68,34 Z" fill="#fbbf24"/>
+          <path d="M 66,22 C 82,18 86,26 78,28 Z" fill="#ef4444"/>
+          <circle cx="48" cy="40" r="3" fill="#f43f5e" opacity="0.5"/>
+        </svg>
+      </div>
+
+      <div class="animal-bekantan" title="Bekantan Cute">
+        <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="50" cy="65" rx="28" ry="32" fill="#d97706"/>
+          <ellipse cx="50" cy="68" rx="18" ry="22" fill="#fef3c7"/>
+          <circle cx="50" cy="35" r="22" fill="#fca5a5"/>
+          <circle cx="38" cy="40" r="4.5" fill="#f43f5e" opacity="0.4"/>
+          <circle cx="62" cy="40" r="4.5" fill="#f43f5e" opacity="0.4"/>
+          <circle cx="41" cy="30" r="4" fill="#451a03"/>
+          <circle cx="42" cy="28" r="1.5" fill="#ffffff"/>
+          <circle cx="59" cy="30" r="4" fill="#451a03"/>
+          <circle cx="60" cy="28" r="1.5" fill="#ffffff"/>
+          <path class="bekantan-nose" d="M 50,32 C 40,36 38,50 50,52 C 62,50 60,36 50,32 Z" fill="#f87171"/>
+          <path d="M 45,54 Q 50,58 55,54" stroke="#451a03" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path class="bekantan-tail" d="M 72,80 C 88,88 92,98 84,104" stroke="#fef3c7" stroke-width="6" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+
+      <svg class="tree-vector-svg" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 85,600 L 115,320 C 95,260 55,220 35,190 L 60,200 C 85,230 115,270 125,320 L 140,600 Z" fill="#854d0e"/>
+        <g class="swaying-canopy">
+          <circle cx="100" cy="180" r="75" fill="#10b981"/>
+          <circle cx="150" cy="190" r="60" fill="#34d399"/>
+          <circle cx="60" cy="230" r="50" fill="#059669"/>
+          <circle cx="110" cy="250" r="55" fill="#6ee7b7"/>
+          <path d="M 50,260 Q 40,310 45,350 M 95,270 Q 105,330 100,380 M 160,240 Q 170,290 165,340" stroke="#16a34a" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- HUTAN SISI KANAN & ORANGUTAN CUTE -->
+    <div class="forest-margin forest-right">
+      <div class="animal-orangutan" title="Orangutan Cute">
+        <svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="45" r="28" fill="#b45309"/>
+          <path d="M 30,22 Q 38,12 50,18 Q 62,12 70,22" stroke="#b45309" stroke-width="5" stroke-linecap="round" fill="none"/>
+          <circle cx="50" cy="48" r="18" fill="#f59e0b"/>
+          <circle cx="38" cy="52" r="3.5" fill="#f43f5e" opacity="0.4"/>
+          <circle cx="62" cy="52" r="3.5" fill="#f43f5e" opacity="0.4"/>
+          <circle cx="41" cy="42" r="3.5" fill="#27272a"/>
+          <circle cx="42" cy="40" r="1.2" fill="#ffffff"/>
+          <circle cx="59" cy="42" r="3.5" fill="#27272a"/>
+          <circle cx="60" cy="40" r="1.2" fill="#ffffff"/>
+          <path d="M 44,54 Q 50,60 56,54" stroke="#451a03" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M 26,50 C 12,40 5,22 15,12" stroke="#b45309" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M 74,50 C 88,40 95,22 85,12" stroke="#b45309" stroke-width="8" stroke-linecap="round" fill="none"/>
+        </svg>
+      </div>
+
+      <svg class="tree-vector-svg" viewBox="0 0 300 600" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 215,600 L 185,300 C 205,240 245,200 265,170 L 240,180 C 215,210 185,250 175,300 L 160,600 Z" fill="#854d0e"/>
+        <g class="swaying-canopy">
+          <circle cx="180" cy="160" r="70" fill="#10b981"/>
+          <circle cx="230" cy="180" r="55" fill="#34d399"/>
+          <circle cx="130" cy="210" r="48" fill="#059669"/>
+          <circle cx="190" cy="230" r="50" fill="#6ee7b7"/>
+          <path d="M 120,230 Q 110,280 115,330 M 175,240 Q 185,300 180,350 M 235,210 Q 245,270 240,320" stroke="#16a34a" stroke-width="4" stroke-linecap="round" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CONTAINER UTAMA -->
+  <div class="app-container">
+
+    <!-- SISI KIRI: PANEL LOGIN & REGISTER -->
+    <main class="left-panel">
+      <div class="auth-card">
+
+        <!-- LOGO POHON BERINGIN CUTE STORYBOOK -->
+        <div class="logo-wrapper" id="logoWrapper" title="Klik untuk mengulang animasi logo">
+          <svg viewBox="0 0 180 150" class="nature-logo" xmlns="http://www.w3.org/2000/svg">
+            <g class="logo-clouds">
+              <path d="M 55,36 C 55,28 64,22 74,22 C 80,15 94,14 104,20 C 112,15 124,20 126,28 C 135,28 140,36 135,44 C 140,52 132,60 124,60 L 58,60 C 48,60 44,52 50,44 C 45,38 48,32 55,36 Z" 
+                    fill="#38bdf8" opacity="0.95"/>
+              <path d="M 32,48 C 32,42 38,38 44,38 C 48,33 58,33 64,38 C 68,43 65,50 58,50 L 36,50 C 30,50 28,45 32,48 Z" 
+                    fill="#7dd3fc" opacity="0.8"/>
+              <path d="M 76,28 C 84,22 96,20 104,26" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </g>
+
+            <g class="logo-micro-nature">
+              <path class="micro-wind w1" d="M 25,75 C 40,70 60,78 75,72" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path class="micro-wind w2" d="M 105,65 C 120,60 140,68 155,62" stroke="#bae6fd" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle class="micro-leaf l1" cx="44" cy="70" r="3" fill="#34d399"/>
+              <circle class="micro-leaf l2" cx="140" cy="60" r="3.5" fill="#10b981"/>
+              <circle class="micro-leaf l3" cx="150" cy="84" r="2.5" fill="#059669"/>
+            </g>
+
+            <g class="logo-tree">
+              <path d="M 62,136 C 68,130 76,122 82,118 C 88,122 96,130 102,136 Z" fill="#6c3f19"/>
+              <path class="tree-trunk" d="M 72,135 L 75,98 C 70,90 62,85 58,82 C 64,84 72,88 77,92 L 80,82 L 84,82 L 87,92 C 92,88 100,84 106,82 C 102,85 94,90 89,98 L 92,135 Z" fill="#854d0e"/>
+
+              <g class="aerial-roots">
+                <path d="M 58,86 L 58,110 C 58,114 56,114 56,110 L 56,86 Z" fill="#4d7c0f"/>
+                <path d="M 68,88 L 68,118 C 68,122 66,122 66,118 L 66,88 Z" fill="#65a30d"/>
+                <path d="M 96,88 L 96,118 C 96,122 98,122 98,118 L 98,88 Z" fill="#65a30d"/>
+                <path d="M 106,86 L 106,110 C 106,114 108,114 108,110 L 108,86 Z" fill="#4d7c0f"/>
+              </g>
+
+              <g class="banyan-canopy">
+                <circle cx="82" cy="56" r="24" fill="#34d399"/>
+                <circle cx="60" cy="68" r="20" fill="#10b981"/>
+                <circle cx="104" cy="68" r="20" fill="#10b981"/>
+                <circle cx="46" cy="82" r="15" fill="#059669"/>
+                <circle cx="118" cy="82" r="15" fill="#059669"/>
+                <circle cx="76" cy="50" r="10" fill="#6ee7b7"/>
+              </g>
+            </g>
+
+            <g class="logo-o2">
+              <rect x="126" y="74" width="40" height="25" rx="12.5" fill="#0284c7" opacity="0.18"/>
+              <text x="132" y="92" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#0284c7">O</text>
+              <text x="146" y="96" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#0369a1">2</text>
+              <circle cx="158" cy="78" r="2.5" fill="#38bdf8"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="brand-header">
+          <h2>AeroNusa ID</h2>
+          <p>Pemantauan Udara & Cuaca Kalimantan</p>
+        </div>
+
+        <!-- FORM LOGIN -->
+        <form id="loginForm" class="auth-form active">
+          <div class="form-group">
+            <label for="loginUsername">Nama Pengguna</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user input-icon"></i>
+              <input type="text" id="loginUsername" placeholder="Masukkan username" required autocomplete="username">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Kata Sandi</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input type="password" id="loginPassword" placeholder="Masukkan password" required autocomplete="current-password">
+              <button type="button" class="toggle-password" id="toggleLoginPass" aria-label="Tampilkan Password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="remember-me">
+              <input type="checkbox" checked>
+              <span>Ingat Saya</span>
+            </label>
+            <a href="#" class="forgot-link" id="forgotPassBtn">Lupa Password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">
+            <span>Masuk ke Portal</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <div class="form-footer">
+            <p>Belum mempunyai akun? <a href="#" id="showRegisterBtn">Daftar Sekarang</a></p>
+          </div>
+        </form>
+
+        <!-- FORM REGISTER -->
+        <form id="registerForm" class="auth-form hidden">
+          <div class="form-group">
+            <label for="regName">Nama Lengkap</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-id-card input-icon"></i>
+              <input type="text" id="regName" placeholder="Masukkan nama lengkap" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regUsername">Username Baru</label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user input-icon"></i>
+              <input type="text" id="regUsername" placeholder="Buat username unik" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regPassword">Kata Sandi</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-lock input-icon"></i>
+              <input type="password" id="regPassword" placeholder="Minimal 8 karakter" required>
+              <button type="button" class="toggle-password" id="toggleRegPass" aria-label="Tampilkan Password">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary btn-register">
+            <span>Buat Akun Baru</span>
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <div class="form-footer">
+            <p>Sudah punya akun? <a href="#" id="showLoginBtn">Masuk Di Sini</a></p>
+          </div>
+        </form>
+
+      </div>
+    </main>
+
+    <!-- SISI KANAN: DASHBOARD KALIMANTAN -->
+    <aside class="right-panel">
+      <div class="weather-news-container">
+
+        <div class="dashboard-header">
+          <div class="location-badge">
+            <i class="fa-solid fa-location-dot"></i>
+            <select id="citySelect" class="city-selector">
+              <option value="banjarmasin" selected>Banjarmasin, Kalsel</option>
+              <option value="ikn">IKN Nusantara, Kaltim</option>
+              <option value="samarinda">Samarinda, Kaltim</option>
+              <option value="palangkaraya">Palangka Raya, Kalteng</option>
+              <option value="pontianak">Pontianak, Kalbar</option>
+              <option value="balikpapan">Balikpapan, Kaltim</option>
+            </select>
+          </div>
+
+          <!-- WIDGET JAM ALAM REAL-TIME -->
+          <div class="nature-clock-widget">
+            <svg class="clock-cloud-accent" viewBox="0 0 40 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 8,16 C 8,11 13,8 18,8 C 21,4 29,4 33,8 C 37,9 39,13 37,17 C 40,20 37,23 33,23 L 9,23 C 4,23 2,19 6,15 Z" fill="#38bdf8" opacity="0.95"/>
+            </svg>
+
+            <svg class="grass-vines-overlay" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 4,38 C 2,28 8,20 12,12 C 14,22 10,32 10,38 Z" fill="#10b981"/>
+              <path d="M 10,38 C 12,30 18,24 22,18 C 21,28 17,34 16,38 Z" fill="#059669"/>
+              <path d="M 0,36 Q 40,30 80,37 T 160,36" stroke="#059669" stroke-width="2" fill="none"/>
+              <path d="M 142,34 C 146,26 152,22 156,16 C 154,26 148,32 148,36 Z" fill="#10b981"/>
+            </svg>
+
+            <div class="clock-display">
+              <i class="fa-regular fa-clock clock-icon"></i>
+              <span id="clockTime">--:--:-- WITA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-card">
+          <div class="weather-main">
+            <div class="temp-box">
+              <h1 id="tempVal">31°C</h1>
+              <p id="weatherDesc"><i class="fa-solid fa-smog"></i> Berawan & Udara Kabur</p>
+            </div>
+            <div class="aqi-badge unhealthy" id="aqiBadge">
+              <span class="aqi-label">Indeks AQI</span>
+              <span class="aqi-num" id="aqiVal">152</span>
+              <span class="aqi-status" id="aqiStatus">Tidak Sehat</span>
+            </div>
+          </div>
+
+          <div class="weather-details">
+            <div class="detail-item">
+              <i class="fa-solid fa-wind"></i>
+              <div>
+                <span>Polutan Utama</span>
+                <strong id="pmVal">PM2.5: 61.4 µg/m³</strong>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-droplet"></i>
+              <div>
+                <span>Kelembapan</span>
+                <strong id="humidityVal">78%</strong>
+              </div>
+            </div>
+            <div class="detail-item">
+              <i class="fa-solid fa-compass"></i>
+              <div>
+                <span>Kecepatan Angin</span>
+                <strong id="windVal">9 km/jam (Tenggara)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-section">
+          <div class="news-section-title">
+            <h3><i class="fa-regular fa-newspaper"></i> Kabar Udara & Cuaca Terkini Kalimantan</h3>
+            <span class="news-count" id="newsCount">0 Berita</span>
+          </div>
+
+          <div class="news-feed" id="newsFeed"></div>
+        </div>
+
+      </div>
+    </aside>
+
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- File JavaScript Terpisah -->
+  <script src="script.js"></script>
+</body>
+</html>
